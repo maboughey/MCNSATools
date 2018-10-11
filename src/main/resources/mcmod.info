@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mcnsatools",
+  "name": "MCNSA Tools",
+  "description": "Tools for MCNSA",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["maboughey"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
