@@ -11,12 +11,12 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = McnsaTools.MODID, name = McnsaTools.NAME, version = McnsaTools.VERSION, acceptableRemoteVersions = "*")
 public class McnsaTools {
 
-    public static final String MODID = "mcnsatools";
-    public static final String NAME = "MCNSA Tools";
-    public static final String VERSION = "0.1";
+    static final String MODID = "mcnsatools";
+    static final String NAME = "MCNSA Tools";
+    static final String VERSION = "0.1";
 
     public static Logger logger;
-    public static ChatHandler chatHandler;
+    static ChatHandler chatHandler;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
@@ -25,6 +25,12 @@ public class McnsaTools {
 
         //Load config file
         Config.init(event.getSuggestedConfigurationFile());
+
+        //Default check
+        if (Config.isDefault)
+            logger.error("Default settings are loaded. Please edit configuration file at: "+event.getSuggestedConfigurationFile().toString());
+
+
 
     }
 

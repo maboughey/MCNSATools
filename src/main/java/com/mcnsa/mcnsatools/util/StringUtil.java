@@ -5,7 +5,6 @@ import net.minecraft.util.text.TextFormatting;
 public class StringUtil {
 
     public static String colour(String message) {
-
         message = message.replaceAll("&0", TextFormatting.BLACK.toString());
         message = message.replaceAll("&1", TextFormatting.DARK_BLUE.toString());
         message = message.replaceAll("&2", TextFormatting.DARK_GREEN.toString());
@@ -27,10 +26,7 @@ public class StringUtil {
     }
 
     public static String formatChat(String channel, String rank, String player, String message) {
-        //TODO: Get this string from config file
-        String chatMessage = "&7[%channel%][%rank%] &f%player%: &7%message%";
-
-        chatMessage = chatMessage.replaceAll("%channel%", channel);
+        String chatMessage = Config.chatMessageFormat.replaceAll("%channel%", channel);
         chatMessage = chatMessage.replaceAll("%rank%", rank);
         chatMessage = chatMessage.replaceAll("%player%", player);
         chatMessage = chatMessage.replaceAll("%message%", message);
@@ -40,10 +36,7 @@ public class StringUtil {
     }
 
     public static String formatMessage(String rank, String player, String message){
-        //TODO: Get string from config file
-        String chatMessage = "&7[MSG]&7[%rank%&7] &f%player%: &7%message%";
-
-        chatMessage = chatMessage.replaceAll("%rank%", rank);
+        String chatMessage = Config.privateMessageFormat.replaceAll("%rank%", rank);
         chatMessage = chatMessage.replaceAll("%player%", player);
         chatMessage = chatMessage.replaceAll("%message%", message);
 
