@@ -28,8 +28,7 @@ public class StringUtil {
 
     public static String formatChat(String channel, String rank, String player, String message) {
         //TODO: Get this string from config file
-        String formatting = "&7[%channel%][%rank%] &f%player%: &7%message%";
-        String chatMessage = formatting;
+        String chatMessage = "&7[%channel%][%rank%] &f%player%: &7%message%";
 
         chatMessage = chatMessage.replaceAll("%channel%", channel);
         chatMessage = chatMessage.replaceAll("%rank%", rank);
@@ -41,8 +40,8 @@ public class StringUtil {
     }
 
     public static String formatMessage(String rank, String player, String message){
-        String formatting = "&7[MSG][%rank%] &f%player%: &7%message%";
-        String chatMessage = formatting;
+        //TODO: Get string from config file
+        String chatMessage = "&7[MSG]&7[%rank%&7] &f%player%: &7%message%";
 
         chatMessage = chatMessage.replaceAll("%rank%", rank);
         chatMessage = chatMessage.replaceAll("%player%", player);
