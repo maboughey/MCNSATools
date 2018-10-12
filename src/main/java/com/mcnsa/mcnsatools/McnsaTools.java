@@ -2,6 +2,7 @@ package com.mcnsa.mcnsatools;
 
 
 import com.mcnsa.mcnsatools.chat.ChatHandler;
+import com.mcnsa.mcnsatools.chat.commands.MsgCommand;
 import com.mcnsa.mcnsatools.util.Config;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -35,12 +36,18 @@ public class McnsaTools {
     }
 
     @EventHandler
+    public void serverStarting(FMLServerStartingEvent event) {
+
+        //register chat commands
+        event.registerServerCommand(new MsgCommand());
+    }
+
+    @EventHandler
     public void init(FMLInitializationEvent event) {
         logger.info("Loading "+McnsaTools.NAME + " " + McnsaTools.VERSION);
 
         //Start Chat handler
         chatHandler = new ChatHandler();
-
 
     }
 

@@ -34,7 +34,7 @@ public class Config {
 
         //Message Formatting
         chatMessageFormat = config.get("Message Formatting", "Chat Message", "&7[%rank%&7] &f%player%: &7%message%").getString();
-        privateMessageFormat = config.get("Message Formatting", "Private Message", "&7[MSG][%rank%&7] &f%player%: &7%message%").getString();
+        privateMessageFormat = config.get("Message Formatting", "Private Message", "&7[MSG]&f%rank%%player%&7: &7%message%").getString();
 
         config.save();
     }
